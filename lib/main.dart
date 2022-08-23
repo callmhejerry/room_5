@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:room_5/theme/theme_constants.dart';
 
-import 'screens/HomeScreen/home_screen.dart';
+import 'screens/onbardingScreen/onboarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,14 +17,14 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           title: 'Flutter Demo',
-          theme: ThemeData(
-            fontFamily:"Rubik",
-          ),
+          debugShowCheckedModeBanner: false,
+          theme: CustomTheme.lightTheme,
+          // darkTheme: CustomTheme.darkTheme,
           home: child,
         );
       },
       designSize: const Size(375, 812),
-      child: const HomeScreen(),
+      child: const OnboardingScreen(),
     );
   }
 }

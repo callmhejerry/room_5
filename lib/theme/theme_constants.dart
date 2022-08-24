@@ -9,7 +9,9 @@ class CustomTheme {
       primary: Colors.black,
       maximumSize: Size(double.infinity, 48.h),
       minimumSize: Size(165.w, 48.h),
-      padding: EdgeInsets.only(left: 24.w, right: 24.w),
+      padding: EdgeInsets.symmetric(
+        horizontal: 24.w,
+      ),
       elevation: 0,
       textStyle: TextStyle(
         height: 1.45,
@@ -38,7 +40,9 @@ class CustomTheme {
         fontWeight: FontWeight.w500,
       ),
       primary: Colors.white,
-      padding: EdgeInsets.only(left: 24.w, right: 24.w),
+      padding: EdgeInsets.symmetric(
+        horizontal: 24.w,
+      ),
       minimumSize: Size(165.w, 48.h),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5.r),
@@ -201,9 +205,9 @@ class CustomTheme {
   );
 
   static InputDecorationTheme lightInputDecorationTheme = InputDecorationTheme(
-    contentPadding: EdgeInsets.all(16.r),
+    contentPadding: EdgeInsets.all(12.r),
     focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12.r),
+      borderRadius: BorderRadius.circular(8.r),
       gapPadding: 8.0,
       borderSide: const BorderSide(
         style: BorderStyle.solid,
@@ -218,13 +222,13 @@ class CustomTheme {
       height: 1.33,
     ),
     hintStyle: TextStyle(
-      fontSize: 12,
+      fontSize: 11,
       letterSpacing: 0.4.w,
       fontWeight: FontWeight.w400,
-      height: 1.33,
+      // height: 1.33,
     ),
     errorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12.r),
+      borderRadius: BorderRadius.circular(8.r),
       gapPadding: 8.0,
       borderSide: const BorderSide(
         style: BorderStyle.solid,
@@ -233,7 +237,7 @@ class CustomTheme {
       ),
     ),
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12.r),
+      borderRadius: BorderRadius.circular(8.r),
       gapPadding: 8.0,
       borderSide: const BorderSide(
         style: BorderStyle.solid,

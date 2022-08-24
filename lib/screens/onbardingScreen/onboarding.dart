@@ -39,17 +39,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     super.initState();
     _pageController = PageController(initialPage: 0);
     _images = [
-      Image.asset("assets/images/Online wishes-bro.png"),
-      Image.asset("assets/images/House restyling-cuate.png"),
-      Image.asset("assets/images/Clutter-amico.png"),
+      Image.asset(
+        "assets/images/Online wishes-bro.png",
+        filterQuality: FilterQuality.high,
+      ),
+      Image.asset(
+        "assets/images/House restyling-cuate.png",
+        filterQuality: FilterQuality.high,
+      ),
+      Image.asset(
+        "assets/images/Clutter-amico.png",
+        filterQuality: FilterQuality.high,
+      ),
     ];
   }
 
   @override
-  void didChangeDependencies() {
+  void didChangeDependencies() async {
     super.didChangeDependencies();
     for (var element in _images) {
-      precacheImage(element.image, context);
+      await precacheImage(element.image, context);
     }
   }
 

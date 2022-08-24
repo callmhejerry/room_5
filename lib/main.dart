@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:room_5/screens/AuthPage/sign_up_screen.dart';
 import 'package:room_5/theme/theme_constants.dart';
-
-import 'screens/onbardingScreen/onboarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
         );
       },
       designSize: const Size(375, 812),
-      child: const OnboardingScreen(),
+      child: const SignUpScreen(),
     );
   }
 }

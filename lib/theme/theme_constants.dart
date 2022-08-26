@@ -1,12 +1,36 @@
 import "package:flutter/material.dart";
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTheme {
   static ElevatedButtonThemeData lightElevatedButtonThemeData =
       ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      onPrimary: Colors.white,
-      primary: Colors.black,
+      onPrimary: lightColorScheme.onPrimary,
+      primary: lightColorScheme.primary,
+      maximumSize: Size(double.infinity, 48.h),
+      minimumSize: Size(165.w, 48.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: 24.w,
+      ),
+      elevation: 0,
+      textStyle: TextStyle(
+        height: 1.45,
+        fontSize: 11,
+        letterSpacing: 0.5.w,
+        fontWeight: FontWeight.w500,
+      ),
+      animationDuration: const Duration(milliseconds: 500),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.r),
+      ),
+    ),
+  );
+  static ElevatedButtonThemeData darkElevatedButtonThemeData =
+      ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      onPrimary: darkColorScheme.onPrimary,
+      primary: darkColorScheme.primary,
       maximumSize: Size(double.infinity, 48.h),
       minimumSize: Size(165.w, 48.h),
       padding: EdgeInsets.symmetric(
@@ -39,7 +63,7 @@ class CustomTheme {
         letterSpacing: 0.5.w,
         fontWeight: FontWeight.w500,
       ),
-      primary: Colors.white,
+      primary: lightColorScheme.primary,
       padding: EdgeInsets.symmetric(
         horizontal: 24.w,
       ),
@@ -54,6 +78,33 @@ class CustomTheme {
       ),
     ),
   );
+  static OutlinedButtonThemeData darkOutLineButtonTheme =
+      OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
+      animationDuration: const Duration(milliseconds: 500),
+      elevation: 0,
+      maximumSize: Size(double.infinity, 48.h),
+      textStyle: TextStyle(
+        height: 1.45,
+        fontSize: 11,
+        letterSpacing: 0.5.w,
+        fontWeight: FontWeight.w500,
+      ),
+      primary: Colors.white,
+      padding: EdgeInsets.symmetric(
+        horizontal: 24.w,
+      ),
+      minimumSize: Size(165.w, 48.h),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.r),
+        side: BorderSide(
+          width: 1.w,
+          color: darkColorScheme.primary,
+          style: BorderStyle.solid,
+        ),
+      ),
+    ),
+  );
 
   static SnackBarThemeData lightSnackBarTheme = SnackBarThemeData(
     elevation: 1,
@@ -63,10 +114,16 @@ class CustomTheme {
     ),
   );
 
-  static TextButtonThemeData textButtonTheme = TextButtonThemeData(
+  static TextButtonThemeData lighttextButtonTheme = TextButtonThemeData(
     style: TextButton.styleFrom(
       textStyle: lightTextTheme.labelLarge,
       primary: lightColorScheme.secondary,
+    ),
+  );
+  static TextButtonThemeData darktextButtonTheme = TextButtonThemeData(
+    style: TextButton.styleFrom(
+      textStyle: lightTextTheme.labelLarge,
+      primary: darkColorScheme.secondary,
     ),
   );
 
@@ -91,25 +148,58 @@ class CustomTheme {
   );
 
   static ColorScheme darkColorScheme = const ColorScheme(
-    background: Color(0xFF4E4E4E),
+    background: Color(0xFF121212),
     primary: Colors.white,
+    // primaryContainer: Color(0xff55B575),
+    tertiary: Color(0xFF9B4F4F),
     brightness: Brightness.dark,
-    error: Color(0xFFF8A0A0),
-    secondary: Color(0xFF61BB7F),
+    onTertiaryContainer: Color(0xff710505),
+    tertiaryContainer: Color(0xffE2CDCD),
+    error: Color(0xFFFF6969),
+    secondary: Color(0xFF9bd5a8),
     onPrimary: Colors.black,
-    onError: Colors.white,
-    secondaryContainer: Color(0xff61BB7F),
-    surface: Color(0xFF030303),
+    onError: Colors.black,
+    secondaryContainer: Color(0xff128c3e),
+    surface: Color(0xFF121212),
     onBackground: Color(0xffF9F9F9),
     onSecondary: Color(0xFF030303),
     onSurface: Colors.white,
   );
 
+  static AppBarTheme lightAppBarTheme = AppBarTheme(
+    backgroundColor: lightColorScheme.surface,
+    elevation: 0,
+    titleTextStyle:
+        lightTextTheme.titleLarge!.copyWith(color: lightColorScheme.onSurface),
+    systemOverlayStyle: const SystemUiOverlayStyle(
+      statusBarBrightness: Brightness.light,
+      systemNavigationBarIconBrightness: Brightness.light,
+    ),
+  );
+
+  static AppBarTheme darkAppBarTheme = AppBarTheme(
+    backgroundColor: darkColorScheme.surface,
+    elevation: 0,
+    titleTextStyle:
+        lightTextTheme.titleLarge!.copyWith(color: darkColorScheme.onSurface),
+    systemOverlayStyle: const SystemUiOverlayStyle(
+      statusBarBrightness: Brightness.dark,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ),
+  );
+
   static BottomNavigationBarThemeData lightBottomNavigationBarTheme =
-      const BottomNavigationBarThemeData(
+      BottomNavigationBarThemeData(
     elevation: 0.5,
-    backgroundColor: Colors.white,
     type: BottomNavigationBarType.fixed,
+    backgroundColor: lightColorScheme.surface,
+  );
+
+  static BottomNavigationBarThemeData darkBottomNavigationBarTheme =
+      BottomNavigationBarThemeData(
+    elevation: 0.5,
+    type: BottomNavigationBarType.fixed,
+    backgroundColor: darkColorScheme.surface,
   );
 
   static TextTheme lightTextTheme = TextTheme(
@@ -209,10 +299,10 @@ class CustomTheme {
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(8.r),
       gapPadding: 8.0,
-      borderSide: const BorderSide(
+      borderSide: BorderSide(
         style: BorderStyle.solid,
         width: 1,
-        color: Color(0xFF61BB7F),
+        color: lightColorScheme.secondary,
       ),
     ),
     labelStyle: TextStyle(
@@ -230,10 +320,51 @@ class CustomTheme {
     errorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(8.r),
       gapPadding: 8.0,
+      borderSide: BorderSide(
+        style: BorderStyle.solid,
+        width: 1,
+        color: lightColorScheme.error,
+      ),
+    ),
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8.r),
+      gapPadding: 8.0,
       borderSide: const BorderSide(
         style: BorderStyle.solid,
         width: 1,
-        color: Color(0xFFFB4747),
+      ),
+    ),
+  );
+  static InputDecorationTheme darkInputDecorationTheme = InputDecorationTheme(
+    contentPadding: EdgeInsets.all(12.r),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8.r),
+      gapPadding: 8.0,
+      borderSide: BorderSide(
+        style: BorderStyle.solid,
+        width: 1,
+        color: darkColorScheme.secondary,
+      ),
+    ),
+    labelStyle: TextStyle(
+      fontSize: 12,
+      letterSpacing: 0.4.w,
+      fontWeight: FontWeight.w400,
+      height: 1.33,
+    ),
+    hintStyle: TextStyle(
+      fontSize: 11,
+      letterSpacing: 0.4.w,
+      fontWeight: FontWeight.w400,
+      height: 1,
+    ),
+    errorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8.r),
+      gapPadding: 8.0,
+      borderSide: BorderSide(
+        style: BorderStyle.solid,
+        width: 1,
+        color: darkColorScheme.error,
       ),
     ),
     border: OutlineInputBorder(
@@ -248,11 +379,12 @@ class CustomTheme {
 
   static ThemeData lightTheme = ThemeData(
     elevatedButtonTheme: lightElevatedButtonThemeData,
-    primaryColor: const Color(0xFF030303),
+    primaryColor: lightColorScheme.primary,
     fontFamily: "Raleway",
-    textButtonTheme: textButtonTheme,
+    textButtonTheme: lighttextButtonTheme,
     colorScheme: lightColorScheme,
     brightness: Brightness.light,
+    appBarTheme: lightAppBarTheme,
     useMaterial3: true,
     textTheme: lightTextTheme,
     inputDecorationTheme: lightInputDecorationTheme,
@@ -262,9 +394,16 @@ class CustomTheme {
 
   static ThemeData darkTheme = ThemeData(
     colorScheme: darkColorScheme,
-    fontFamily: "Rubik",
+    fontFamily: "Raleway",
     brightness: Brightness.dark,
+    elevatedButtonTheme: darkElevatedButtonThemeData,
+    outlinedButtonTheme: darkOutLineButtonTheme,
+    primaryColor: darkColorScheme.primary,
     textTheme: lightTextTheme,
+    textButtonTheme: darktextButtonTheme,
     useMaterial3: true,
+    bottomNavigationBarTheme: darkBottomNavigationBarTheme,
+    appBarTheme: darkAppBarTheme,
+    inputDecorationTheme: darkInputDecorationTheme,
   );
 }

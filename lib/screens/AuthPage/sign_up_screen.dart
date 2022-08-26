@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:room_5/screens/AuthPage/log_in_screen.dart';
 
 import 'customWidget/custom_drop_down_button.dart';
 import 'customWidget/custom_text_field.dart';
@@ -27,9 +28,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.background,
+        body: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 16.0.w),
           child: Form(
             child: Column(
@@ -54,7 +56,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       style: Theme.of(context).textTheme.labelLarge,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
+                        );
+                      },
                       child: const Text(
                         "Sign In",
                       ),
@@ -68,9 +76,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: "Chinedu Jeremiah",
                   inputType: "Name",
                 ),
+                SizedBox(
+                  height: 16.h,
+                ),
                 const CustomTextField(
                   hintText: "example@gmail.com",
                   inputType: "Email",
+                ),
+                SizedBox(
+                  height: 16.h,
                 ),
                 CustomDropDownButton(
                     dropDownList: level,
@@ -84,16 +98,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   inputType: "Course",
                   hintText: "Computer Science",
                 ),
+                SizedBox(
+                  height: 16.h,
+                ),
                 const CustomTextField(
                   inputType: "Password",
                   obscureText: true,
+                ),
+                SizedBox(
+                  height: 16.h,
                 ),
                 const CustomTextField(
                   inputType: "Confirm Password",
                   obscureText: true,
                 ),
                 SizedBox(
-                  height: 8.h,
+                  height: 16.h,
                 ),
                 ElevatedButton(
                   onPressed: () {},

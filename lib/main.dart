@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:room_5/screens/AuthPage/sign_up_screen.dart';
+import 'package:room_5/screens/onbardingScreen/onboarding.dart';
 import 'package:room_5/theme/theme_constants.dart';
 
 void main() {
@@ -18,12 +18,13 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
           theme: CustomTheme.lightTheme,
-          // darkTheme: CustomTheme.darkTheme,
+          themeMode: ThemeMode.dark,
+          darkTheme: CustomTheme.darkTheme,
           home: child,
         );
       },
       designSize: const Size(375, 812),
-      child: const SignUpScreen(),
+      child: const OnboardingScreen(),
     );
   }
 }

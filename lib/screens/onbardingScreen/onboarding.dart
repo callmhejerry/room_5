@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:room_5/screens/AuthPage/sign_up_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -82,6 +83,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   child: const Text("Skip"),
                 ),
         ],
+        backgroundColor: Colors.transparent,
       ),
       body: Column(
         children: [
@@ -110,7 +112,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         onboardingScreens[index]["title"],
                         style: Theme.of(context)
                             .textTheme
-                            .titleMedium!
+                            .titleLarge!
                             .copyWith(fontWeight: FontWeight.w600),
                       ),
                       SizedBox(
@@ -118,7 +120,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                       Text(
                         onboardingScreens[index]["details"],
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodyMedium,
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(
@@ -148,6 +150,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             onPressed: () {
               if (_currentPage == 2) {
                 // log("navigate to a new page");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                );
               } else {
                 _pageController.nextPage(
                     duration: const Duration(

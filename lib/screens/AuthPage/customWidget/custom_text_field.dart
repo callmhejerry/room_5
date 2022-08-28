@@ -7,6 +7,7 @@ class CustomTextField extends StatelessWidget {
   final bool? obscureText;
   final String inputType;
   final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
 
   const CustomTextField({
     Key? key,
@@ -15,6 +16,7 @@ class CustomTextField extends StatelessWidget {
     required this.inputType,
     this.keyboardType,
     this.obscureText,
+    this.textInputAction,
   }) : super(key: key);
 
   @override
@@ -36,6 +38,7 @@ class CustomTextField extends StatelessWidget {
             obscureText: obscureText ?? false,
             obscuringCharacter: "•",
             keyboardType: keyboardType,
+            textInputAction: textInputAction,
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   fontWeight: FontWeight.w600,
                   height: 1.33,

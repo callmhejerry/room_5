@@ -32,6 +32,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       child: Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         body: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           padding: EdgeInsets.symmetric(horizontal: 16.0.w),
           child: Form(
             child: Column(
@@ -82,21 +83,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const CustomTextField(
                   hintText: "example@gmail.com",
                   inputType: "Email",
+                  textInputAction: TextInputAction.next,
+                  keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(
                   height: 16.h,
                 ),
                 CustomDropDownButton(
-                    dropDownList: level,
-                    inputType: "Level",
-                    hintText: "100 Level"),
+                  dropDownList: level,
+                  inputType: "Level",
+                  hintText: "100 Level",
+                ),
                 CustomDropDownButton(
-                    dropDownList: gender,
-                    inputType: "Gender",
-                    hintText: "male"),
+                  dropDownList: gender,
+                  inputType: "Gender",
+                  hintText: "male",
+                ),
                 const CustomTextField(
                   inputType: "Course",
                   hintText: "Computer Science",
+                  textInputAction: TextInputAction.next,
                 ),
                 SizedBox(
                   height: 16.h,
@@ -104,6 +110,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const CustomTextField(
                   inputType: "Password",
                   obscureText: true,
+                  textInputAction: TextInputAction.next,
+                  keyboardType: TextInputType.visiblePassword,
                 ),
                 SizedBox(
                   height: 16.h,
@@ -111,6 +119,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const CustomTextField(
                   inputType: "Confirm Password",
                   obscureText: true,
+                  keyboardType: TextInputType.visiblePassword,
                 ),
                 SizedBox(
                   height: 16.h,

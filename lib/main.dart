@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:room_5/screens/onbardingScreen/onboarding.dart';
+import 'package:room_5/screens/HomeScreen/home_screen.dart';
 import 'package:room_5/theme/theme_constants.dart';
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         );
       },
       designSize: const Size(375, 812),
-      child: const OnboardingScreen(),
+      child: const HomeScreen(),
     );
   }
 }

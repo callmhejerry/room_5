@@ -14,12 +14,7 @@ class CustomTheme {
         horizontal: 24.w,
       ),
       elevation: 0,
-      textStyle: TextStyle(
-        height: 1.45,
-        fontSize: 11,
-        letterSpacing: 0.5.w,
-        fontWeight: FontWeight.w500,
-      ),
+      textStyle: lightTextTheme.labelLarge,
       animationDuration: const Duration(milliseconds: 500),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5.r),
@@ -37,12 +32,7 @@ class CustomTheme {
         horizontal: 24.w,
       ),
       elevation: 0,
-      textStyle: TextStyle(
-        height: 1.45,
-        fontSize: 11,
-        letterSpacing: 0.5.w,
-        fontWeight: FontWeight.w500,
-      ),
+      textStyle: lightTextTheme.labelLarge,
       animationDuration: const Duration(milliseconds: 500),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5.r),
@@ -141,36 +131,36 @@ class CustomTheme {
     error: Color(0xFFFB4747),
     onError: Color(0xFFFFFFFF),
     background: Color(0xFFF9F9F9),
-    onBackground: Color(0xFF888888),
-    surface: Color(0xFFF9F9F9),
+    onBackground: Colors.black,
+    surface: Colors.white,
     onSurface: Color(0xFF888888),
     secondaryContainer: Color(0xFFD2ECDA),
   );
 
-  static ColorScheme darkColorScheme = const ColorScheme(
-    background: Color(0xFF121212),
+  static ColorScheme darkColorScheme = ColorScheme(
+    background: const Color(0xFF121212),
     primary: Colors.white,
     // primaryContainer: Color(0xff55B575),
-    tertiary: Color(0xFF9B4F4F),
+    tertiary: const Color(0xFF9B4F4F),
     brightness: Brightness.dark,
-    onTertiaryContainer: Color(0xff710505),
-    tertiaryContainer: Color(0xffE2CDCD),
-    error: Color(0xFFFF6969),
-    secondary: Color(0xFF9bd5a8),
+    onTertiaryContainer: const Color(0xff710505),
+    tertiaryContainer: const Color(0xffE2CDCD),
+    error: const Color(0xFFFF6969),
+    secondary: const Color(0xFF9bd5a8),
     onPrimary: Colors.black,
     onError: Colors.black,
-    secondaryContainer: Color(0xff128c3e),
-    surface: Color(0xFF121212),
-    onBackground: Color(0xffF9F9F9),
-    onSecondary: Color(0xFF030303),
-    onSurface: Colors.white,
+    secondaryContainer: const Color(0xff128c3e),
+    surface: const Color(0xff1e1e1e),
+    onBackground: Colors.white.withOpacity(.87),
+    onSecondary: const Color(0xFF030303),
+    onSurface: Colors.white.withOpacity(.60),
   );
 
   static AppBarTheme lightAppBarTheme = AppBarTheme(
     backgroundColor: lightColorScheme.surface,
     elevation: 0,
     titleTextStyle:
-        lightTextTheme.titleLarge!.copyWith(color: lightColorScheme.onSurface),
+        lightTextTheme.titleLarge!.copyWith(color: lightColorScheme.primary),
     systemOverlayStyle: const SystemUiOverlayStyle(
       statusBarBrightness: Brightness.light,
       systemNavigationBarIconBrightness: Brightness.light,
@@ -178,7 +168,7 @@ class CustomTheme {
   );
 
   static AppBarTheme darkAppBarTheme = AppBarTheme(
-    backgroundColor: darkColorScheme.surface,
+    backgroundColor: const Color(0xff1e1e1e),
     elevation: 0,
     titleTextStyle:
         lightTextTheme.titleLarge!.copyWith(color: darkColorScheme.onSurface),
@@ -380,7 +370,7 @@ class CustomTheme {
   static ThemeData lightTheme = ThemeData(
     elevatedButtonTheme: lightElevatedButtonThemeData,
     primaryColor: lightColorScheme.primary,
-    fontFamily: "Raleway",
+    fontFamily: "Poppins",
     textButtonTheme: lighttextButtonTheme,
     colorScheme: lightColorScheme,
     brightness: Brightness.light,
@@ -394,7 +384,7 @@ class CustomTheme {
 
   static ThemeData darkTheme = ThemeData(
     colorScheme: darkColorScheme,
-    fontFamily: "Raleway",
+    fontFamily: "Poppins",
     brightness: Brightness.dark,
     elevatedButtonTheme: darkElevatedButtonThemeData,
     outlinedButtonTheme: darkOutLineButtonTheme,

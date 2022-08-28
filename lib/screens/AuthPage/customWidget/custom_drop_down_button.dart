@@ -43,7 +43,10 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
               ),
             ),
             value: value,
-            style: Theme.of(context).textTheme.labelMedium,
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  height: 1.33,
+                ),
             items: widget.dropDownList
                 .map<DropdownMenuItem<String>>(
                     (item) => DropdownMenuItem<String>(

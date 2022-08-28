@@ -12,6 +12,7 @@ class LoginScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.background,
         body: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -46,6 +47,7 @@ class LoginScreen extends StatelessWidget {
               const CustomTextField(
                 inputType: "Email",
                 keyboardType: TextInputType.emailAddress,
+                textInputAction: TextInputAction.next,
               ),
               SizedBox(
                 height: 16.h,

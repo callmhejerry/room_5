@@ -9,13 +9,13 @@ class LodgeCard extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10.r),
       child: SizedBox(
-        width: 300.w,
+        width: 280.w,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset(
               "assets/images/room1.jpg",
-              height: 150.h,
+              height: 130.h,
               fit: BoxFit.cover,
             ),
             Expanded(
@@ -99,9 +99,8 @@ class LodgeCard extends StatelessWidget {
                                   .textTheme
                                   .bodyMedium!
                                   .copyWith(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onBackground,
+                                    color:
+                                        Theme.of(context).colorScheme.tertiary,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),

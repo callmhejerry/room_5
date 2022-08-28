@@ -36,7 +36,7 @@ class _PlaceCardState extends State<PlaceCard> {
     return ClipRRect(
       borderRadius: BorderRadius.circular(12.r),
       child: SizedBox(
-        width: 140.w,
+        width: 120.w,
         child: Stack(
           children: [
             Positioned.fill(

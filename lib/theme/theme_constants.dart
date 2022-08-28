@@ -141,7 +141,7 @@ class CustomTheme {
     background: const Color(0xFF121212),
     primary: Colors.white,
     // primaryContainer: Color(0xff55B575),
-    tertiary: const Color(0xFF9B4F4F),
+    tertiary: const Color.fromARGB(255, 179, 98, 98),
     brightness: Brightness.dark,
     onTertiaryContainer: const Color(0xff710505),
     tertiaryContainer: const Color(0xffE2CDCD),
@@ -186,10 +186,10 @@ class CustomTheme {
   );
 
   static BottomNavigationBarThemeData darkBottomNavigationBarTheme =
-      BottomNavigationBarThemeData(
+      const BottomNavigationBarThemeData(
     elevation: 0.5,
     type: BottomNavigationBarType.fixed,
-    backgroundColor: darkColorScheme.surface,
+    backgroundColor: Color.fromARGB(255, 54, 54, 54),
   );
 
   static TextTheme lightTextTheme = TextTheme(

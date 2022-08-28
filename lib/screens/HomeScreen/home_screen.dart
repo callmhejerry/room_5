@@ -1,3 +1,4 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:room_5/screens/HomeScreen/promoted_room.dart';
@@ -32,6 +33,42 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        iconSize: 21,
+        currentIndex: 0,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              FluentIcons.home_12_filled,
+            ),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              FluentIcons.note_16_regular,
+            ),
+            label: "Shortlist",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              FluentIcons.pen_20_regular,
+            ),
+            label: "Post Ad",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              FluentIcons.mail_16_regular,
+            ),
+            label: "Messages",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              FluentIcons.more_horizontal_20_filled,
+            ),
+            label: "More",
+          ),
+        ],
+      ),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: ListView(
         children: [
@@ -118,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(
-            height: 16.h,
+            height: 12.h,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -130,12 +167,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(
-            height: 16.h,
+            height: 12.h,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: SizedBox(
-              height: 210.h,
+              height: 190.h,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
@@ -155,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(
-            height: 16.h,
+            height: 12.h,
           ),
           Divider(
             color: Theme.of(context).colorScheme.onSurface.withOpacity(.38),
@@ -186,12 +223,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(
-            height: 16.h,
+            height: 12.h,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: SizedBox(
-              height: 320.h,
+              height: 290.h,
               child: ListView(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
@@ -203,7 +240,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(
-            height: 16.h,
+            height: 12.h,
           ),
           Divider(
             color: Theme.of(context).colorScheme.onSurface.withOpacity(.38),
@@ -222,12 +259,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(
-            height: 16.h,
+            height: 12.h,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: SizedBox(
-              height: 280.h,
+              height: 260.h,
               child: ListView(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
@@ -240,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(
-            height: 16.h,
+            height: 12.h,
           ),
           Divider(
             color: Theme.of(context).colorScheme.onSurface.withOpacity(.38),
@@ -276,7 +313,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: SizedBox(
-              height: 250.h,
+              height: 230.h,
               child: ListView(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,

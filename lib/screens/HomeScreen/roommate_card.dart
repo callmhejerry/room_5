@@ -9,15 +9,14 @@ class RoomMateCard extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10.r),
       child: SizedBox(
-        width: 160.w,
+        width: 150.w,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset(
               "assets/images/boyAvatar.png",
               fit: BoxFit.cover,
-              height: 137.h,
-              width: 160.w,
+              height: 117.h,
             ),
             Expanded(
               child: Container(

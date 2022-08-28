@@ -11,13 +11,13 @@ class PromotedRooms extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10.r),
         child: SizedBox(
-          width: 210.w,
+          width: 200.w,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Image.asset(
                 "assets/images/room1.jpg",
-                height: 223.h,
+                height: 193.h,
                 // width: 190.w,
                 fit: BoxFit.cover,
               ),

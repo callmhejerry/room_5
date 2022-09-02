@@ -170,8 +170,10 @@ class CustomTheme {
   static AppBarTheme darkAppBarTheme = AppBarTheme(
     backgroundColor: const Color(0xff1e1e1e),
     elevation: 0,
-    titleTextStyle:
-        lightTextTheme.titleLarge!.copyWith(color: darkColorScheme.onSurface),
+    titleTextStyle: lightTextTheme.titleLarge!.copyWith(
+      color: darkColorScheme.onBackground,
+      fontWeight: FontWeight.w500,
+    ),
     systemOverlayStyle: const SystemUiOverlayStyle(
       statusBarBrightness: Brightness.dark,
       systemNavigationBarIconBrightness: Brightness.dark,
@@ -376,6 +378,7 @@ class CustomTheme {
     brightness: Brightness.light,
     appBarTheme: lightAppBarTheme,
     useMaterial3: true,
+    scaffoldBackgroundColor: lightColorScheme.background,
     textTheme: lightTextTheme,
     inputDecorationTheme: lightInputDecorationTheme,
     bottomNavigationBarTheme: lightBottomNavigationBarTheme,
@@ -387,6 +390,7 @@ class CustomTheme {
     fontFamily: "Poppins",
     brightness: Brightness.dark,
     elevatedButtonTheme: darkElevatedButtonThemeData,
+    scaffoldBackgroundColor: darkColorScheme.background,
     outlinedButtonTheme: darkOutLineButtonTheme,
     primaryColor: darkColorScheme.primary,
     textTheme: lightTextTheme,

@@ -14,9 +14,10 @@ class RoomMateCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset(
-              "assets/images/boyAvatar.png",
+              "assets/images/jerry.jpg",
               fit: BoxFit.cover,
               height: 117.h,
+              alignment: Alignment.topCenter,
             ),
             Expanded(
               child: Container(

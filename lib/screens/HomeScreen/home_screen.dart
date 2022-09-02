@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:room_5/screens/HomeScreen/promoted_room.dart';
 import 'package:room_5/screens/HomeScreen/roommate_card.dart';
 
+import '../SearchScreen/search_for_screen.dart';
 import 'lodge_card.dart';
 import 'place_card.dart';
 
@@ -15,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late Image _avatar;
   final List<Map<String, String>> _places = const [
     {
       "name": "Aroma",
@@ -30,12 +32,31 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   ];
   @override
+  void initState() {
+    super.initState();
+    _avatar = const Image(
+      image: AssetImage("assets/images/boyAvatar.png"),
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    precacheImage(_avatar.image, context);
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor:
+            Theme.of(context).bottomNavigationBarTheme.backgroundColor,
         iconSize: 21,
         currentIndex: 0,
+        selectedItemColor: Theme.of(context).colorScheme.secondary,
+        unselectedItemColor: Theme.of(context).colorScheme.onSurface,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(
@@ -108,8 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 CircleAvatar(
                   backgroundColor: Colors.transparent,
-                  backgroundImage:
-                      const AssetImage("assets/images/boyAvatar.png"),
+                  backgroundImage: _avatar.image,
                   radius: 16.r,
                 ),
               ],
@@ -121,6 +141,13 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SearchForScreen(),
+                    ));
+              },
               child: Container(
                 // alignment: Alignment.center,
                 padding: EdgeInsets.symmetric(horizontal: 12.r, vertical: 12.r),
@@ -330,6 +357,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+          ),
+          SizedBox(
+            height: 8.h,
           ),
         ],
       ),

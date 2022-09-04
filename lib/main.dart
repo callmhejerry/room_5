@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:room_5/screens/HomeScreen/home_screen.dart';
 import 'package:room_5/theme/theme_constants.dart';
+
+import 'screens/SearchScreen/lodges_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,12 +20,12 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: CustomTheme.lightTheme,
           themeMode: ThemeMode.dark,
-          // darkTheme: CustomTheme.darkTheme,
+          darkTheme: CustomTheme.darkTheme,
           home: child,
         );
       },
       designSize: const Size(375, 812),
-      child: const HomeScreen(),
+      child: const LodgesList(),
     );
   }
 }

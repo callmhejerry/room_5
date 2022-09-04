@@ -10,6 +10,7 @@ class LodgeCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(10.r),
       child: SizedBox(
         width: 280.w,
+        height: 260.h,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

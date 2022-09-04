@@ -143,10 +143,11 @@ class _HomeScreenState extends State<HomeScreen> {
             child: InkWell(
               onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SearchForScreen(),
-                    ));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SearchForScreen(),
+                  ),
+                );
               },
               child: Container(
                 // alignment: Alignment.center,
@@ -255,7 +256,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: SizedBox(
-              height: 290.h,
+              height: 300.h,
               child: ListView(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,

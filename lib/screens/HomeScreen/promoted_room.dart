@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PromotedRooms extends StatelessWidget {
-  const PromotedRooms({Key? key}) : super(key: key);
+  const PromotedRooms({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 16.0.w),
+      padding: EdgeInsets.zero,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10.r),
         child: SizedBox(
@@ -24,7 +26,7 @@ class PromotedRooms extends StatelessWidget {
               Expanded(
                 child: Container(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 8.w, vertical: 16.h),
+                      EdgeInsets.symmetric(horizontal: 8.w, vertical: 12.h),
                   color: Theme.of(context).colorScheme.surface,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,37 +51,50 @@ class PromotedRooms extends StatelessWidget {
                             ),
                       ),
                       SizedBox(
-                        height: 8.h,
+                        height: 6.h,
                       ),
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: "₦ 170,000",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onBackground,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                      Row(
+                        children: [
+                          RichText(
+                            maxLines: 1,
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: "₦ 170,000",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onBackground,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
+                                TextSpan(
+                                  text: " /yr",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onBackground,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                )
+                              ],
                             ),
-                            TextSpan(
-                              text: " per year",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onBackground,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                            )
-                          ],
-                        ),
+                          ),
+                          // const Spacer(),
+                          // IconButton(
+                          //   onPressed: () {},
+                          //   icon: const Icon(
+                          //     Icons.bookmark_outline_rounded,
+                          //   ),
+                          //   padding: EdgeInsets.zero,
+                          // )
+                        ],
                       ),
                     ],
                   ),

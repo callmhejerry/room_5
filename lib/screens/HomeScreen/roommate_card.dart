@@ -16,7 +16,7 @@ class RoomMateCard extends StatelessWidget {
             Image.asset(
               "assets/images/jerry.jpg",
               fit: BoxFit.cover,
-              height: 127.h,
+              height: 124.h,
               alignment: Alignment.topCenter,
             ),
             Expanded(

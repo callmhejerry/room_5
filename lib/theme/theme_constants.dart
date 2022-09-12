@@ -160,7 +160,7 @@ class CustomTheme {
     backgroundColor: lightColorScheme.surface,
     elevation: 0,
     titleTextStyle:
-        lightTextTheme.titleLarge!.copyWith(color: lightColorScheme.primary),
+        lightTextTheme.titleMedium!.copyWith(color: lightColorScheme.primary),
     systemOverlayStyle: const SystemUiOverlayStyle(
       statusBarBrightness: Brightness.light,
       systemNavigationBarIconBrightness: Brightness.light,
@@ -170,7 +170,7 @@ class CustomTheme {
   static AppBarTheme darkAppBarTheme = AppBarTheme(
     backgroundColor: const Color(0xff1e1e1e),
     elevation: 0,
-    titleTextStyle: lightTextTheme.titleLarge!.copyWith(
+    titleTextStyle: lightTextTheme.titleMedium!.copyWith(
       color: darkColorScheme.onBackground,
       fontWeight: FontWeight.w500,
     ),

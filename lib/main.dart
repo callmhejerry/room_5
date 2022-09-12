@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:room_5/screens/SearchScreen/roommates_list.dart';
 import 'package:room_5/theme/theme_constants.dart';
-
-import 'screens/SearchScreen/lodges_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,16 +15,16 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       builder: (context, child) {
         return MaterialApp(
-          title: 'Flutter Demo',
+          title: 'Room 5',
           debugShowCheckedModeBanner: false,
           theme: CustomTheme.lightTheme,
-          themeMode: ThemeMode.dark,
+          themeMode: ThemeMode.light,
           darkTheme: CustomTheme.darkTheme,
           home: child,
         );
       },
       designSize: const Size(375, 812),
-      child: const LodgesList(),
+      child: const RoomMatesList(),
     );
   }
 }

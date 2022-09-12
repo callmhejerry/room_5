@@ -69,7 +69,7 @@ class PromotedRoomList extends StatelessWidget {
                   crossAxisCount: 2,
                   mainAxisSpacing: 8.h,
                   crossAxisSpacing: 8.w,
-                  mainAxisExtent: 280.h,
+                  mainAxisExtent: 285.h,
                 ),
               ),
             ),

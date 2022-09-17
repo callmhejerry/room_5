@@ -162,7 +162,7 @@ class _FilterScreenState extends State<FilterScreen> {
 }
 
 class Budget {
-  RangeValues rangeValues = const RangeValues(100000, 170000);
+  static RangeValues rangeValues = const RangeValues(100000, 170000);
 }
 
 class BudgetWidget extends StatefulWidget {
@@ -195,14 +195,14 @@ class _BudgetWidgetState extends State<BudgetWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           RangeSlider(
-            values: rangeValues.rangeValues,
+            values: Budget.rangeValues,
             activeColor: Theme.of(context).colorScheme.secondary,
             inactiveColor: Theme.of(context).brightness == Brightness.dark
                 ? const Color(0xff1e1e1e)
                 : const Color.fromARGB(255, 219, 219, 219),
             onChanged: (RangeValues value) {
               setState(() {
-                rangeValues.rangeValues = value;
+                Budget.rangeValues = value;
               });
             },
             max: 400000,
@@ -218,8 +218,7 @@ class _BudgetWidgetState extends State<BudgetWidget> {
               children: [
                 Expanded(
                   child: PriceBox(
-                    rangeValues:
-                        rangeValues.rangeValues.start.truncate().toString(),
+                    rangeValues: Budget.rangeValues.start.truncate().toString(),
                     name: "Min price",
                   ),
                 ),
@@ -238,8 +237,7 @@ class _BudgetWidgetState extends State<BudgetWidget> {
                 ),
                 Expanded(
                   child: PriceBox(
-                    rangeValues:
-                        rangeValues.rangeValues.end.truncate().toString(),
+                    rangeValues: Budget.rangeValues.end.truncate().toString(),
                     name: "Max price",
                   ),
                 ),

@@ -20,6 +20,7 @@ class _FilterScreenState extends State<FilterScreen> {
     "Dynamo junction",
     "Tezzers junction",
     "Divine junction",
+    "Others",
   ];
 
   final List<Map<String, dynamic>> _roomType = [
@@ -129,6 +130,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   children: [
                     Checkbox(
                       visualDensity: VisualDensity.adaptivePlatformDensity,
+                      activeColor: Theme.of(context).colorScheme.secondary,
                       value: roomType["selected"],
                       onChanged: (bool? newValue) {
                         setState(() {
@@ -149,7 +151,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 );
               },
             ).toList(),
-            SizedBox(height: 30.h),
+            SizedBox(height: 60.h),
             ElevatedButton(
               onPressed: () {},
               child: const Text("Search"),

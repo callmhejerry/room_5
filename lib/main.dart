@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:room_5/screens/SearchScreen/roommates_list.dart';
+import 'package:room_5/screens/Lodge%20Screen/lodge_screen.dart';
+
 import 'package:room_5/theme/theme_constants.dart';
 
 void main() {
@@ -23,8 +24,10 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
+      minTextAdapt: true,
+      splitScreenMode: true,
       designSize: const Size(375, 812),
-      child: const RoomMatesList(),
+      child: const LodgeScreen(),
     );
   }
 }

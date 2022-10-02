@@ -6,8 +6,8 @@ class CustomTheme {
   static ElevatedButtonThemeData lightElevatedButtonThemeData =
       ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      onPrimary: lightColorScheme.onPrimary,
-      primary: lightColorScheme.primary,
+      foregroundColor: lightColorScheme.onPrimary,
+      backgroundColor: lightColorScheme.primary,
       maximumSize: Size(double.infinity, 48.h),
       minimumSize: Size(165.w, 48.h),
       padding: EdgeInsets.symmetric(
@@ -24,8 +24,8 @@ class CustomTheme {
   static ElevatedButtonThemeData darkElevatedButtonThemeData =
       ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      onPrimary: darkColorScheme.onPrimary,
-      primary: darkColorScheme.primary,
+      foregroundColor: darkColorScheme.onPrimary,
+      backgroundColor: darkColorScheme.primary,
       maximumSize: Size(double.infinity, 48.h),
       minimumSize: Size(165.w, 48.h),
       padding: EdgeInsets.symmetric(
@@ -44,6 +44,7 @@ class CustomTheme {
   static OutlinedButtonThemeData lightOutLineButtonTheme =
       OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
+      foregroundColor: lightColorScheme.primary,
       animationDuration: const Duration(milliseconds: 500),
       elevation: 0,
       maximumSize: Size(double.infinity, 48.h),
@@ -53,7 +54,6 @@ class CustomTheme {
         letterSpacing: 0.5.w,
         fontWeight: FontWeight.w500,
       ),
-      primary: lightColorScheme.primary,
       padding: EdgeInsets.symmetric(
         horizontal: 24.w,
       ),
@@ -71,6 +71,7 @@ class CustomTheme {
   static OutlinedButtonThemeData darkOutLineButtonTheme =
       OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
+      foregroundColor: Colors.white,
       animationDuration: const Duration(milliseconds: 500),
       elevation: 0,
       maximumSize: Size(double.infinity, 48.h),
@@ -80,7 +81,6 @@ class CustomTheme {
         letterSpacing: 0.5.w,
         fontWeight: FontWeight.w500,
       ),
-      primary: Colors.white,
       padding: EdgeInsets.symmetric(
         horizontal: 24.w,
       ),
@@ -106,14 +106,14 @@ class CustomTheme {
 
   static TextButtonThemeData lighttextButtonTheme = TextButtonThemeData(
     style: TextButton.styleFrom(
+      foregroundColor: lightColorScheme.secondary,
       textStyle: lightTextTheme.labelLarge,
-      primary: lightColorScheme.secondary,
     ),
   );
   static TextButtonThemeData darktextButtonTheme = TextButtonThemeData(
     style: TextButton.styleFrom(
+      foregroundColor: darkColorScheme.secondary,
       textStyle: lightTextTheme.labelLarge,
-      primary: darkColorScheme.secondary,
     ),
   );
 
@@ -195,91 +195,91 @@ class CustomTheme {
   );
 
   static TextTheme lightTextTheme = TextTheme(
-    displayLarge: const TextStyle(
+    displayLarge: TextStyle(
       height: 1.12,
-      fontSize: 57,
+      fontSize: 57.sp,
       letterSpacing: 0,
       fontWeight: FontWeight.w400,
     ),
-    displayMedium: const TextStyle(
-      fontSize: 45,
+    displayMedium: TextStyle(
+      fontSize: 45.sp,
       letterSpacing: 0,
       fontWeight: FontWeight.w400,
       height: 1.15,
     ),
-    displaySmall: const TextStyle(
-      fontSize: 36,
+    displaySmall: TextStyle(
+      fontSize: 36.sp,
       fontWeight: FontWeight.w400,
       height: 1.22,
     ),
-    headlineLarge: const TextStyle(
-      fontSize: 32,
+    headlineLarge: TextStyle(
+      fontSize: 32.sp,
       fontWeight: FontWeight.w400,
       height: 1.25,
       letterSpacing: 0,
     ),
-    headlineMedium: const TextStyle(
-      fontSize: 28,
+    headlineMedium: TextStyle(
+      fontSize: 28.sp,
       letterSpacing: 0,
       fontWeight: FontWeight.w400,
       height: 1.28,
     ),
-    headlineSmall: const TextStyle(
-      fontSize: 24,
+    headlineSmall: TextStyle(
+      fontSize: 24.sp,
       letterSpacing: 0,
       fontWeight: FontWeight.w400,
       height: 1.333,
     ),
-    titleLarge: const TextStyle(
-      fontSize: 22,
+    titleLarge: TextStyle(
+      fontSize: 22.sp,
       letterSpacing: 0,
       fontWeight: FontWeight.w400,
       height: 1.27,
     ),
     titleMedium: TextStyle(
-      fontSize: 16,
+      fontSize: 16.sp,
       letterSpacing: 0.15.w,
       fontWeight: FontWeight.w400,
       height: 1.333,
     ),
     titleSmall: TextStyle(
-      fontSize: 14,
+      fontSize: 14.sp,
       letterSpacing: 0.1.w,
       fontWeight: FontWeight.w500,
       height: 1.4,
     ),
     labelLarge: TextStyle(
-      fontSize: 14,
+      fontSize: 14.sp,
       fontWeight: FontWeight.w500,
       letterSpacing: 0.1.w,
       height: 1.42,
     ),
     labelMedium: TextStyle(
       height: 1.33,
-      fontSize: 12,
+      fontSize: 12.sp,
       letterSpacing: 0.5.w,
       fontWeight: FontWeight.w500,
     ),
     labelSmall: TextStyle(
       height: 1.45,
-      fontSize: 11,
+      fontSize: 11.sp,
       letterSpacing: 0.5.w,
       fontWeight: FontWeight.w500,
     ),
     bodyLarge: TextStyle(
-      fontSize: 16,
+      fontSize: 16.sp,
       letterSpacing: 0.5.w,
       fontWeight: FontWeight.w400,
       height: 1.5,
     ),
     bodyMedium: TextStyle(
-      fontSize: 14,
+      fontSize: 14.sp,
       letterSpacing: 0.25.w,
       fontWeight: FontWeight.w400,
       height: 1.42,
     ),
     bodySmall: TextStyle(
-      fontSize: 12,
+      fontSize: 12.sp,
       letterSpacing: 0.4.w,
       fontWeight: FontWeight.w400,
       height: 1.33,

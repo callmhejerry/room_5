@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:room_5/screens/Lodge%20Screen/lodge_screen.dart';
 
 import 'package:room_5/theme/theme_constants.dart';
+
+import 'screens/MoreScreen/more_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       designSize: const Size(375, 812),
-      child: const LodgeScreen(),
+      child: const MoreScreen(),
     );
   }
 }

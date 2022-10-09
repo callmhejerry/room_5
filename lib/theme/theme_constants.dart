@@ -149,7 +149,7 @@ class CustomTheme {
     secondary: const Color(0xFF9bd5a8),
     onPrimary: Colors.black,
     onError: Colors.black,
-    secondaryContainer: const Color(0xff128c3e),
+    secondaryContainer: const Color(0xFFD2ECDA),
     surface: const Color(0xff1e1e1e),
     onBackground: Colors.white.withOpacity(.87),
     onSecondary: const Color(0xFF030303),
@@ -371,6 +371,7 @@ class CustomTheme {
 
   static ThemeData lightTheme = ThemeData(
     elevatedButtonTheme: lightElevatedButtonThemeData,
+    outlinedButtonTheme: lightOutLineButtonTheme,
     primaryColor: lightColorScheme.primary,
     fontFamily: "Poppins",
     textButtonTheme: lighttextButtonTheme,

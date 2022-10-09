@@ -31,6 +31,10 @@ class _FilterScreenState extends State<FilterScreen> {
     {
       "type": "Shared room",
       "selected": false,
+    },
+    {
+      "type": "Student hostel",
+      "selected": false,
     }
   ];
   String? _placeValue;

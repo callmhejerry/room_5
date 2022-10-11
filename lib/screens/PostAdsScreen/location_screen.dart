@@ -29,6 +29,17 @@ class _LocationScreenState extends State<LocationScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Step 1: Location"),
+        bottom: PreferredSize(
+          preferredSize: const Size(
+            double.infinity,
+            1,
+          ),
+          child: LinearProgressIndicator(
+            value: 0.0,
+            color: Theme.of(context).colorScheme.secondary,
+            minHeight: 1,
+          ),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),

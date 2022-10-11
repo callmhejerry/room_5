@@ -64,6 +64,17 @@ class _PropertyDetailScreenState extends State<PropertyDetailScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Step 2: Property Detail"),
+        bottom: PreferredSize(
+          preferredSize: const Size(
+            double.infinity,
+            1,
+          ),
+          child: LinearProgressIndicator(
+            value: 0.4,
+            color: Theme.of(context).colorScheme.secondary,
+            minHeight: 1,
+          ),
+        ),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 16.w),

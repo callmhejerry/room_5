@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:room_5/screens/PostAdsScreen/rent_and_budget_screen.dart';
+import 'package:room_5/screens/PostAdsScreen/photos_and_bio.dart';
 
 import 'package:room_5/theme/theme_constants.dart';
 
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       designSize: const Size(375, 812),
-      child: const RentAndBudgetScreen(),
+      child: const PhotosAndBioScreen(),
     );
   }
 }

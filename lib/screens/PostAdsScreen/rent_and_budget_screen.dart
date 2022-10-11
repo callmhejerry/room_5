@@ -10,14 +10,30 @@ class RentAndBudgetScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Step 3: Rent & Bills"),
+          bottom: PreferredSize(
+            preferredSize: const Size(
+              double.infinity,
+              1,
+            ),
+            child: LinearProgressIndicator(
+              value: 0.6,
+              color: Theme.of(context).colorScheme.secondary,
+              minHeight: 1,
+            ),
+          ),
         ),
         body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 32.h),
+          padding: EdgeInsets.symmetric(
+            horizontal: 16.w,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              SizedBox(
+                height: 32.h,
+              ),
               Text(
-                "What's the yearly rent?",
+                "What's the yearly rent? *",
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               SizedBox(

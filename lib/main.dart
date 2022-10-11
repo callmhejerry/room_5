@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:room_5/screens/PostAdsScreen/rent_and_budget_screen.dart';
 
 import 'package:room_5/theme/theme_constants.dart';
-
-import 'screens/PostAdsScreen/property_detail_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       designSize: const Size(375, 812),
-      child: const PropertyDetailScreen(),
+      child: const RentAndBudgetScreen(),
     );
   }
 }

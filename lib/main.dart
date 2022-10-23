@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:room_5/screens/PostAdsScreen/photos_and_bio.dart';
+import 'package:room_5/screens/PostAdsScreen/property_detail_screen.dart';
 
 import 'package:room_5/theme/theme_constants.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           title: 'Room 5',
           debugShowCheckedModeBanner: false,
           theme: CustomTheme.lightTheme,
-          themeMode: ThemeMode.dark,
+          themeMode: ThemeMode.light,
           darkTheme: CustomTheme.darkTheme,
           home: child,
         );
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       designSize: const Size(375, 812),
-      child: const PhotosAndBioScreen(),
+      child: const PropertyDetailScreen(),
     );
   }
 }
